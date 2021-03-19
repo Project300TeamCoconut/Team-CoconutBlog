@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+ <html> 
+
+<head>
+
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Team Coconut Blog</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+
+
+
+</head>
+
+<body id="top">
+
+
+
+<div id="header-wrap"><header>
+
+
+		<nav>
+		    <ul>
+			    <li id="current"><a href="index.html">Home</a><span></span></li>
+			    
+			    
+		    </ul>
+	    </nav>
+
+        
+
+
+        <form id="quick-search" method="get" action="index.html">
+            <fieldset class="search">
+                <label for="qsearch">Search:</label>
+                <input class="tbox" id="qsearch" type="text" name="qsearch" value="Search..." title="Start typing and hit ENTER" />
+                <button class="btn" title="Submit Search">Search</button>
+            </fieldset>
+        </form>
+
+
+  
+</header></div>
+           <header>
+ 	<h1>Team Coconut blog</h1>
+        </header>
+
+
+
+
+<div id="featured-wrap"><article id="featured" class="clearfix">
+
+    <div id="featured-ribbon"></div>
+
+    <div class="image-block">
+        <a title="" href="#"><img width="335" height="240" alt="featured" src="images/Coconut.png" /></a>
+    </div>
+
+    <div class="text-block">
+        <h2><a href="#">Introduction </a></h2>
+        <p class="post-meta">Posted by <a href="index.html">Kian</a> , <a href="index.html">internet</a></p>
+
+        <p>We are a group of 3rd year computing students in IT SLigo that have formed the group known as Team Coconut, and we intend to develop a movie application using swipable cards. We are using this blog to document all of our progress along the way so people can get an understanding of what buildng an andriod app from scratch. Our idea came from when you and a friend or a partner are at home and you can't decide what to watch, well you then simply use our app, pick a genre and our app will the list movies for you to swipe either to left for no or to the right for yes and at the end it will show you and your partner each movie that you both swiped right to. 
+        </p>
+
+    
+
+        
+
+    </div>
+
+</article></div>
+    
+
+
+
+
+<div id="content-wrap">
+
+    <!-- main -->
+    <section id="main">
+
+        <article class="post">
+
+            <h2><a href="index.html">September</a></h2>
+
+			<p class="post-info">Posted by Team Coconut<a href="index.html"></a> | Filed under <a href="index.html"></a>, <a href="index.html">internet</a></p>
+
+			<p>September</p>
+
+			<p>So now that we all have met for the first time we can start working on devloping our movie app.</p>
+
+			<p>We first created the firebase database. We followed a tutorial on how to create a user login/registration with firebase real-time database and its user authentication.We used a real-time database because updates can be seen instantly. This makes getting and retrieving data faster. We also learned that you must implement the firebase library in the build gradle of the application.We were able to access functions provided by firebase to seamlessly create a user login. The user can register with their name, email and password. We also added a show/hide checkbox for the password to for privacy.  We were then planning to implement another method of sign in but we decided to use that in our future work. This was a success and we could now store users within the firebase database.
+			</p>
+
+			
+
+			
+
+        </article>
+
+        <h2><a href="index.html"></a></h2>
+
+		    <h2>Login page</h2>
+
+			<p><a href="#"><img src="images/Login.png" width="280" height="178" alt="sample-image" class="align-left" /></a>
+			
+			</p>
+        
+        
+        <div id="content-wrap">
+
+   
+    <section id="main">
+
+        <article class="post">
+
+            <h2><a href="index.html">October</a></h2>
+
+			<p class="post-info">Posted by Team Coconut<a href="index.html"></a> | Filed under <a href="index.html"></a>, <a href="index.html">internet</a></p>
+
+			<p>October</p>
+
+			
+
+			<p>Our next task was to populate the cards with movie names and images from the API. We decided to just use movie names to make it simple until the app was up and running. We would then move onto using the posters and ratings.
+            We had previously created a sample app to get the API working in android studio. It displayed the data from the API in a  recycler view. This a list of movies with their name, rating and image. The recycler view is a library for android studio which only displays what the user can see on the screen, anything else is executed and not seen. Transferring this logic of the recycler view onto the viewholder We created a customer array adapter for the API but this used the recycler view so it could not be used within the cards. Instead we created another customer adapter “to provide views for an AdapterView, Returns a view for each object in a collection of data objects you provide, and can be used with list-based user interface widgets such as ListView or Spinner”.  We then needed to populate the view on the cards by calling each object such as the movie name or image and place the result into a TextView or ImageView. Eventually through trial and error we got this array adapter to work by overriding the getView method to populate the cards view and its resource.
+
+			</p>
+
+			
+
+			
+
+        </article>
+
+        <h2><a href="index.html"></a></h2>
+
+		    <h2>Wishlist</h2>
+
+			<p><a href="#"><img src="images/WishList.png" width="280" height="178" alt="sample-image" class="align-left" /></a>
+			
+			</p>
+        
+         <div id="content-wrap">
+
+   
+    <section id="main">
+
+        <article class="post">
+
+            <h2><a href="index.html">November</a></h2>
+
+			<p class="post-info">Posted by Team Coconut<a href="index.html"></a> | Filed under <a href="index.html"></a>, <a href="index.html">internet</a></p>
+
+			<p>November</p>
+
+			<p>Our task this month was to register the likes and dislikes to firebase</p>
+
+			<p>Registering the likes and dislikes to firebase When the cards were populated with the data from API we needed to register swipes to the database to that specific user. We followed a tutorial on referencing and adding root nodes to the firebase database. We learned that it was quite simple, you must create a database reference first. Firebase provide a function to do this which was easy to access as we had already implemented the firebase reference in the build gradle. From here we could then create a reference in the OnLeftCardExit and OnRightCardExit methods which will add the movie name into a yes or no child in the database depending on the direction of the swipe within the current user ID that is logged into the app at that moment.
+
+
+			</p>
+
+			
+
+			
+
+        </article>
+
+        <h2><a href="index.html"></a></h2>
+
+		    <h2>Poster</h2>
+
+			<p><a href="#"><img src="images/Poster%20.jpg" width="280" height="178" alt="sample-image" class="align-left" /></a>
+			
+			</p>
+        
+         <section id="main">
+
+        <article class="post">
+
+            <h2><a href="index.html">December</a></h2>
+
+			<p class="post-info">Posted by Team Coconut<a href="index.html"></a> | Filed under <a href="index.html"></a>, <a href="index.html">internet</a></p>
+
+			<p>December</p>
+
+			<p>We have finally got the matches to display </p>
+
+			<p>The final step in having all the main functionality working was to display the matches for the current user. To do this we had to create a match’s activity with an xml file to get the matches and put them into an array list in order to be displayed. We then had to create a match’s model object which contained a constructor for the movie name, which is what we are retrieving to be displayed. Finally, we created a custom matches adapter to display the matches to the user using the xml file and a recycler view. There were two methods in the matches adapter that we needed to use in order for the display to work. The adapter extended a recycler view, similar to what we had used in the sample API project. onCreateViewHolder which is used to initialize the ViewHolder “It is the very object that represents each item in our collection and will be used to display it” (WillowTree Apps, 2016) and onBindViewHolder which is called when we need to pass the data into the ViewHolder. Basically, the adapter that contains these two methods prepares the xml file for the list of movie matches to be displayed. The actual fetching of the data takes place in the matches activity. Finally, in the matches activity we created a database reference pointing to the matches child node and notified the matches adapter of any changes such as, the user views their matches, comes back and swipes on more movies and matches with another few, views the matches again and they are updated with the new matches. we also did our poster
+			</p>
+
+			
+
+			
+
+        </article>
+
+        <h2><a href="index.html"></a></h2>
+
+		    <h2></h2>
+
+			<p><a href="#"><img src="images/MainScreenShot.png" width="280" height="178" alt="sample-image" class="align-left" /></a>
+			
+			</p>
+             
+              <section id="main">
+
+        <article class="post">
+
+            <h2><a href="index.html">january</a></h2>
+
+			<p class="post-info">Posted by Team Coconut<a href="index.html"></a> | Filed under <a href="index.html"></a>, <a href="index.html">internet</a></p>
+
+			<p>January</p>
+
+			<p>User Interface</p>
+
+			<p>
+             We then started the UI design by creating wireframes in Mockflow.  These sample interfaces helped us later on with the actual implementation.  A copy of our wireframes can be seen in Appendix A. 
+We wanted the UI to be simple and clean. We also did not want to bombard the user with many different sections or navigation bars. We added a simple background along with a logo, changed the font style and shape of the buttons. In regards to the actual cards themselves, we positioned them towards the middle of the screen so the poster and movie name can be easily seen. Although the matches and the watch list do not contain the poster, they show the movie name. There is also a delete button located beside each name.
+
+
+			</p>
+
+			
+
+			
+
+        </article>
+
+        <h2><a href="index.html"></a></h2>
+
+		    <h2>UI</h2>
+
+			<p><a href="#"><img src="images/sample-image.jpg" width="280" height="178" alt="sample-image" class="align-left" /></a>
+			
+			</p>
+                  
+                   <section id="main">
+
+        <article class="post">
+
+            <h2><a href="index.html">Febuary</a></h2>
+
+			<p class="post-info">Posted by Team Coconut<a href="index.html"></a> | Filed under <a href="index.html"></a>, <a href="index.html">internet</a></p>
+
+			<p>Febuary</p>
+
+			<p>Almost done </p>
+
+			<p> Towards the end of the project we also added in the browse all movies page which allows the user to navigate to a page to see trending movies and provides a search bar if they are looking for a specific one.
+We also added ImageButtons to allow the user to navigate between browsing, settings, the watchlist and current matches. There is also an option to delete a specific match or clear all swipes/matches.
+The EditText box was created so that the user could enter their friends ID and begin matching with them.
+
+			</p>
+             </article>
+
+        <h2><a href="index.html"></a></h2>
+
+		    <h2></h2>
+
+			
+            
+             <section id="main">
+
+        <article class="post">
+
+            <h2><a href="index.html">March</a></h2>
+
+			<p class="post-info">Posted by Team Coconut<a href="index.html"></a> | Filed under <a href="index.html"></a>, <a href="index.html">internet</a></p>
+
+			<p>March</p>
+
+			<p>Finalisng the application</p>
+
+			<p> We are testing the app now to make sure it is ready and we have shownit to some family and friends. The friends and family that we have shown the app to have all responded with positive feedback. No one really ever wants to decide what to watch or pick for someone else. We demoed the app and allowed users to interact and they all understood what we were trying to achieve. The tinder swipe effect has come into play here because it is familiar to most people and they understand how the swiping works. The users were able to view their matches or add to the watchlist. They could also clear all their matches and swipes to start from the beginning. Overall we had a great response from potential users which gave us important feedback, such as whether or not people understood the app, if they liked the UI or found it too complicated.
+                
+			</p>
+
+			
+
+			
+
+       
+
+			
+
+			
+
+        </article>
+
+        <h2><a href="index.html"></a></h2>
+
+		    <h2></h2>
+
+			<p><a href="#"><img src="images/sample-image.jpg" width="280" height="178" alt="sample-image" class="align-left" /></a>
+			
+			</p>
+
+			
+
+			
+        
+        
+        
+        
+        
+        
+       
+
+                       </section>
+<div id="extra-wrap"><div id="extra" class="clearfix">
+
+    <div class="xcol">
+
+		    <h3>Contact Info</h3>
+
+		    <p>
+		    <strong>Phone: </strong>+1234567<br/>
+		    <strong>Fax: </strong>+123456789
+		    </p>
+
+		    <p><strong>Address: </strong>IT Sligo, Ballinode, Co.Sligo</p>
+            <p><strong>E-mail: </strong>TeamCoconut@outlook.com</p>
+		    
+
+            <h3>Follow Us</h3>
+
+	        <div class="footer-list social">
+			    <ul>
+				    <li class="facebook"><a href="index.html">Facebook</a></li>
+				    <li class="twitter"><a href="index.html">Twitter</a></li>
+				    <li class="googleplus"><a href="index.html">Google+</a></li>
+				    <li class="email"><a href="index.html">Email</a></li>
+				 
+			    </ul>
+		    </div>
+
+	</div>
+
+    <div class="xcol">
+
+            
+
+            
+           
+    </div>
+
+    <div class="xcol">
+
+            <h3>Archives</h3>
+
+	        <div class="footer-list">
+			    <ul>
+				    <li><a href="index.html">Septemer 2020</a></li>
+				    <li><a href="index.html">October 2020</a></li>
+				    <li><a href="index.html">December 2020</a></li>
+				    <li><a href="index.html">January 2021</a></li>
+                    <li><a href="index.html">Febuary 2021</a></li>
+                    <li><a href="index.html">March 2021</a></li>
+			    </ul>
+		    </div>
+
+           
+
+	        <div class="footer-list">
+				
+			</div>
+
+	</div>
+
+    <div class="xcol last">
+
+        <h3>About us</h3>
+
+        <p>
+            <a href="index.html"><img width="40" height="40" class="align-left" alt="firefox"src="images/Coconut.png"></a> We ae a group of 3rd year It Sligo students also know as Team Coconut. The team is built up of 4 members Kian, Carla, Hannah and Zahra and we are developing a mobile app using andriod studio as part of our Project 300 module and this is our blog in which we document our application all way from paper to being a fully functioning andriod app.</p>
+    
+          
+
+
+    </div>
+
+</div></div>
+
+
+<footer class="clearfix">
+    <p class="footer-left">
+	   	<a href="index.html">Home</a> |
+
+        <a class="back-to-top" href="#top">Back to Top</a>
+    </p>
+
+
+	
+</footer>
+
+
+<script>window.jQuery || document.write('<script src="js/jquery-1.6.1.min.js"><\/script>')</script>
+
+<script src="js/scrollToTop.js"></script>
+                  
+
+</body>
+</html>
+
